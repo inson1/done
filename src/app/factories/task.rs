@@ -1,17 +1,17 @@
 use std::str::FromStr;
 
 use crate::fl;
+use adw::glib::Propagation;
 use adw::prelude::{
 	ActionRowExt, BoxExt, ExpanderRowExt, OrientableExt, ToggleButtonExt,
 };
-use adw::traits::{EntryRowExt, PreferencesRowExt};
+use adw::prelude::{EntryRowExt, PreferencesRowExt};
 use chrono::{DateTime, Datelike, Duration, Timelike, Utc};
 use core_done::models::list::List;
 use core_done::models::priority::Priority;
 use core_done::models::recurrence::Day;
 use core_done::models::status::Status;
 use core_done::models::task::Task;
-use glib::Propagation;
 use relm4::factory::{AsyncFactoryComponent, FactoryVecDeque};
 use relm4::factory::{AsyncFactorySender, DynamicIndex, FactoryView};
 use relm4::{
@@ -542,7 +542,7 @@ impl AsyncFactoryComponent for TaskModel {
 	fn init_widgets(
 		&mut self,
 		index: &DynamicIndex,
-		root: &Self::Root,
+		root: Self::Root,
 		_returned_widget: &<Self::ParentWidget as FactoryView>::ReturnedWidget,
 		sender: AsyncFactorySender<Self>,
 	) -> Self::Widgets {

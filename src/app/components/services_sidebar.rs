@@ -2,7 +2,7 @@ use core_done::service::Service;
 use relm4::{
 	component::{AsyncComponent, AsyncComponentParts},
 	factory::{AsyncFactoryVecDeque, DynamicIndex},
-	gtk::{self, prelude::OrientableExt, traits::WidgetExt},
+	gtk::{self, prelude::OrientableExt, prelude::WidgetExt},
 	AsyncComponentSender, RelmWidgetExt,
 };
 
